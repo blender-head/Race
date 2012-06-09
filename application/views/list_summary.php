@@ -70,6 +70,18 @@
                     		<li><?php echo anchor('administer/site_info', 'Site Info') ?></li>
                         </ul>
                     </li>
+                    <?php if($has_final): ?>
+                    	<li><?php echo anchor('', 'Final Result', 'class="race-final"') ?>
+                        	<ul id="race-final-sub">
+                            	<?php 
+									for($i=0;$i<count($class_name);$i++)
+									{
+                    					echo '<li>' . anchor("final_race/display_final_result/$class_ids[$i]/$race_types[$i]", "$class_name[$i]") . '</li>';
+                                    }
+                                ?>
+                        	</ul>
+                        </li>
+                    <?php endif ?>
                 </ul><!--/menu-->
             
             </div><!--/header-bottom-right-->

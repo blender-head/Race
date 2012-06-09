@@ -77,7 +77,7 @@
                             	<?php 
 									for($i=0;$i<count($class_name);$i++)
 									{
-                    					echo '<li>' . anchor("final_race/display_final_result/$class_id[$i]/$race_type[$i]", "$class_name[$i]") . '</li>';
+                    					echo '<li>' . anchor("final_race/display_final_result/$class_id[$i]/$race_types[$i]", "$class_name[$i]") . '</li>';
                                     }
                                 ?>
                         	</ul>

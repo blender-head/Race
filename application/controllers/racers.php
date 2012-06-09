@@ -23,31 +23,22 @@
         //Default controller, homepage, load all racers
         public function index()
         {
-            //Call racers_model, get all racers
-            //$this->db->select('*');
-            //$this->db->from('racer');
-            
-            
-            //call race_final.php model, check if there are datas in race.race_final table
-            //to display "Final Result" menu
+            // query the race_final table
+            // we need to know whether we have final results or not
             $query_final = $this->race_final->query_final_result();
-            
-            
-            
             
             //if table race.race_final has some data
             if(count($query_final) > 0)
             {
                 //set $has_final to true, and send it to racers_index.php
+                // make the menu Final Result active
                 $data['has_final'] = TRUE;
                 
                 foreach($query_final as $classes)
                 {
                     $class[] = $classes;
-                    
                 }
                 
-              
                 for($i=0;$i<count($class);$i++)
                 {
                     $class_name[] = $class[$i]->class_name;
@@ -55,18 +46,18 @@
                     $race_types[] = $class[$i]->race_type;
                 }
                 
-               
                 $class_uniq = array_values(array_unique($class_name));
                 $class_id_uniq = array_values(array_unique($class_id));
                 $race_type_uniq = array_values(array_unique($race_types));
                 
                 $data['class_name'] = $class_uniq;
                 $data['class_id'] = $class_id_uniq;
-                $data['race_type'] = $race_type_uniq;
+                $data['race_types'] = $race_type_uniq;
             }
             else
             {
                 //set $has_final to false, and send it to racers_index.php
+                // make the Final Result menu inactive
                 $data['has_final'] = FALSE;
             }
             
@@ -76,7 +67,6 @@
             //set the pagination configuration
             $url = base_url();
             $base_page = $url . 'index.php/racers/index';
-            
             $config['base_url'] = $base_page;
             $config['total_rows'] = $this->db->get('racer')->num_rows();
             $config['per_page'] = 10;
@@ -106,14 +96,13 @@
                 
                 //send $class to racers_index.php, data for submenu dropdown
                 $data['class'] = $this->get_all_class(); 
-                
             }
             
             //load racers_index.php view
             $this->load->view('racers_index', $data); 
         }
         //end index function
-       
+        
         
         // function to load all class from class table
         private function get_all_class()
@@ -333,8 +322,6 @@
                 }
             }
             
-            //echo count($racer_add_class);
-            
             //load racer-edit.php view
             $this->load->view('racer-edit', $data);
         }
@@ -538,6 +525,45 @@
         //function to load racers by their class, receive class_id as parameter
         public function racerclass($id)
         {
+            // query the race_final table
+            // we need to know whether we have final results or not
+            $query_final = $this->race_final->query_final_result();
+            
+            //if table race.race_final has some data
+            if(count($query_final) > 0)
+            {
+                //set $has_final to true, and send it to racers_index.php
+                // make the menu Final Result active
+                $data['has_final'] = TRUE;
+                
+                foreach($query_final as $classes)
+                {
+                    $class[] = $classes;
+                    
+                }
+                
+                for($i=0;$i<count($class);$i++)
+                {
+                    $class_name[] = $class[$i]->class_name;
+                    $class_id[] = $class[$i]->class_id;
+                    $race_types[] = $class[$i]->race_type;
+                }
+                
+                $class_uniq = array_values(array_unique($class_name));
+                $class_id_uniq = array_values(array_unique($class_id));
+                $race_type_uniq = array_values(array_unique($race_types));
+                
+                $data['class_name'] = $class_uniq;
+                $data['class_id'] = $class_id_uniq;
+                $data['race_types'] = $race_type_uniq;
+            }
+            else
+            {
+                //set $has_final to false, and send it to racers_index.php
+                // make the Final Result menu inactive
+                $data['has_final'] = FALSE;
+            }
+            
             //query the racer and racer_add_class
             $query = $this->racers_model->list_racer_by_class($id);
             $query_add_class = $this->racer_add_class->list_racer_by_class($id);
@@ -551,47 +577,14 @@
                     $data['title'] = $row->class_name; 
                 }
                 
-                $query_final = $this->race_final->query_final_result();
-                        
-                if(count($query_final) > 0)
-                {
-                            //set $has_final to true, and send it to racers_index.php
-                    $data['has_final'] = TRUE;
-                
-                    foreach($query_final as $classes)
-                    {
-                        $class[] = $classes;
-                    
-                    }
-                
-                    for($i=0;$i<count($class);$i++)
-                    {
-                        $class_name[] = $class[$i]->class_name;
-                        $class_id[] = $class[$i]->class_id;
-                        $race_types[] = $class[$i]->race_type;
-                    }
-                
-                    $class_uniq = array_values(array_unique($class_name));
-                    $class_id_uniq = array_values(array_unique($class_id));
-                    $race_type_uniq = array_values(array_unique($race_types));
-                
-                    $data['class_name'] = $class_uniq;
-                    $data['class_id'] = $class_id_uniq;
-                    $data['race_type'] = $race_type_uniq;
-                 }
-                 else
-                 {
-                    //set $has_final to false, and send it to racers_index.php
-                    $data['has_final'] = FALSE;
-                 }
-                
                 $data['class'] = $this->get_all_class();
                 $data['race_type'] = $this->get_race_type();
                 $data['division'] = $this->get_all_qtt();
                 $data['exist'] = $this->exist_message;
                 
-                $this->load->view('racers_class', $data);
-            }
+             }
+            
+             $this->load->view('racers_class', $data);
                     
         }    
         
@@ -712,6 +705,45 @@
         //function to display qtt links
         public function division_links()
         {
+            // query the race_final table
+            // we need to know whether we have final results or not
+            $query_final = $this->race_final->query_final_result();
+            
+            //if table race.race_final has some data
+            if(count($query_final) > 0)
+            {
+                //set $has_final to true, and send it to racers_index.php
+                // make the menu Final Result active
+                $data['has_final'] = TRUE;
+                
+                foreach($query_final as $classes)
+                {
+                    $class[] = $classes;
+                    
+                }
+                
+                for($i=0;$i<count($class);$i++)
+                {
+                    $class_name[] = $class[$i]->class_name;
+                    $class_id[] = $class[$i]->class_id;
+                    $race_types[] = $class[$i]->race_type;
+                }
+                
+                $class_uniq = array_values(array_unique($class_name));
+                $class_id_uniq = array_values(array_unique($class_id));
+                $race_type_uniq = array_values(array_unique($race_types));
+                
+                $data['class_name'] = $class_uniq;
+                $data['class_id'] = $class_id_uniq;
+                $data['race_types'] = $race_type_uniq;
+            }
+            else
+            {
+                //set $has_final to false, and send it to racers_index.php
+                // make the Final Result menu inactive
+                $data['has_final'] = FALSE;
+            }
+            
             //check the qtt_links table first
             $query = $this->qtt_links->get_qtt_links();
             $class = $this->get_all_class();
@@ -937,6 +969,45 @@
        public function race_summary_by_class($class_id)
        {
            
+           // query the race_final table
+            // we need to know whether we have final results or not
+            $query_final = $this->race_final->query_final_result();
+            
+            //if table race.race_final has some data
+            if(count($query_final) > 0)
+            {
+                //set $has_final to true, and send it to racers_index.php
+                // make the menu Final Result active
+                $data['has_final'] = TRUE;
+                
+                foreach($query_final as $classes)
+                {
+                    $class[] = $classes;
+                    
+                }
+                
+                for($i=0;$i<count($class);$i++)
+                {
+                    $class_name[] = $class[$i]->class_name;
+                    $class_idss[] = $class[$i]->class_id;
+                    $race_types[] = $class[$i]->race_type;
+                }
+                
+                $class_uniq = array_values(array_unique($class_name));
+                $class_id_uniq = array_values(array_unique($class_idss));
+                $race_type_uniq = array_values(array_unique($race_types));
+                
+                $data['class_name'] = $class_uniq;
+                $data['class_ids'] = $class_id_uniq;
+                $data['race_types'] = $race_type_uniq;
+            }
+            else
+            {
+                //set $has_final to false, and send it to racers_index.php
+                // make the Final Result menu inactive
+                $data['has_final'] = FALSE;
+            }
+           
            //query the race.race_summary table
            //select racers by class_id
            $query = $this->race_summary->race_summary_by_class($class_id);
@@ -1041,41 +1112,7 @@
            //if race.race_summary is empty
            else
            {    
-                //call race_final.php model, check if there are datas in race.race_final table
-                $query_final = $this->race_final->query_final_result();
                 $data['class'] = $this->get_all_class();
-                
-                //echo count($query_final);
-                
-                //if table race.race_final has some data
-                if(count($query_final) > 0)
-                {
-                    //set $has_final to true, and send it to racers_index.php
-                    $data['has_final'] = TRUE;
-                
-                    foreach($query_final as $classes)
-                    {
-                        $class[] = $classes;
-                    }
-                
-                    for($i=0;$i<count($class);$i++)
-                    {
-                        $class_name[] = $class[$i]->class_name;
-                        $class_ids[] = $class[$i]->class_id;
-                    }
-                
-                    $class_uniq = array_values(array_unique($class_name));
-                    $class_id_uniq = array_values(array_unique($class_ids));
-                
-                    $data['class_name'] = $class_uniq;
-                    $data['class_id'] = $class_id_uniq;
-                }
-                else
-                {
-                    //set $has_final to false, and send it to racers_index.php
-                    $data['has_final'] = FALSE;
-                }
-                
                 $this->load->view('racers_summary_empty', $data);
            }
           
@@ -1086,6 +1123,44 @@
        //function to display race summary result
        public function list_summary($id, $pick, $race_type, $class_id)
        {
+           // query the race_final table
+            // we need to know whether we have final results or not
+            $query_final = $this->race_final->query_final_result();
+            
+            //if table race.race_final has some data
+            if(count($query_final) > 0)
+            {
+                //set $has_final to true, and send it to racers_index.php
+                // make the menu Final Result active
+                $data['has_final'] = TRUE;
+                
+                foreach($query_final as $classes)
+                {
+                    $class[] = $classes;
+                    
+                }
+                
+                for($i=0;$i<count($class);$i++)
+                {
+                    $class_name[] = $class[$i]->class_name;
+                    $class_idss[] = $class[$i]->class_id;
+                    $race_types[] = $class[$i]->race_type;
+                }
+                
+                $class_uniq = array_values(array_unique($class_name));
+                $class_id_uniq = array_values(array_unique($class_idss));
+                $race_type_uniq = array_values(array_unique($race_types));
+                
+                $data['class_name'] = $class_uniq;
+                $data['class_ids'] = $class_id_uniq;
+                $data['race_types'] = $race_type_uniq;
+            }
+            else
+            {
+                //set $has_final to false, and send it to racers_index.php
+                // make the Final Result menu inactive
+                $data['has_final'] = FALSE;
+            }
            
             //we want to display race summary based on race types
             //becuase each race type has different values
@@ -1381,7 +1456,7 @@
             
             //load the mpdf54 library
             $this->load->library('mpdf54/mpdf');
-            //$this->load->helper('file');
+            $this->load->helper('file');
             $stylesheet = read_file('assets/css/pdf.css');
             
             //create the pdf
@@ -1413,7 +1488,7 @@
                
                //load the mpdf54 library
                $this->load->library('mpdf54/mpdf');
-               //$this->load->helper('file');
+               $this->load->helper('file');
                $stylesheet = read_file('assets/css/pdf.css');
                
                if($qtt_name = "Race II")

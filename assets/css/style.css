@@ -1,0 +1,1423 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	background-color: #393e44;
+	background: url(../image/flag-body.png) repeat;
+}
+
+.clear {
+	clear: both;	
+}
+
+@font-face {
+	font-family: "Fontin Sans Rg";
+	src: url("../fonts/Fontin_Sans_B.otf") format("opentype"),
+		 url("../fonts/Fontin_Sans_BI.otf") format("opentype"),
+		 url("../fonts/Fontin_Sans_I.otf") format("opentype"),
+		 url("../fonts/Fontin_Sans_R.otf") format("opentype"),
+		 url("../fonts/Fontin_Sans_SC.otf") format("opentype"),
+		 url("../fonts/Fontin-Bold.otf") format("opentype"),
+		 url("../fonts/Fontin-Italic.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Grandesign Neue Serif";
+	src: url("../fonts/Grandesign Neue Serif Bold Italic.ttf"),
+		 url("../fonts/Grandesign Neue Serif Bold.ttf"),
+		 url("../fonts/Grandesign Neue Serif Italic.ttf"),
+		 url("../fonts/Grandesign Neue Serif.ttf");
+}
+
+@font-face {
+	font-family: "Microsoft New Tai Lue";
+	src: url("../fonts/ntailu.ttf"),
+		 url("../fonts/ntailub.ttf");
+}
+
+#header-wrapper {
+	width: 100%;
+	height: 203px;
+	/*background-color: #000;*/
+	background-image: url(../image/header-shadow.png);
+	background-repeat: repeat-x;
+}
+
+#header {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+#header-top {
+	width: 950px;
+	height: 25px;
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+#header-bottom {
+	width: 950px;
+	background: #fff;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+#header-bottom-left {
+	width: 163px;
+	height: 23px;
+	/*background: #fff;*/
+	background: url(../image/date-bg.png) repeat-x;
+	float: left;	
+}
+
+#header-bottom-left h2.date {
+	font-family: "Fontin Sans Rg";
+	font-size: 14px;
+	color: #fff;		
+	text-align: center;
+	position: relative;
+	top: 4px;
+}
+
+#header-bottom-right {
+	width: 785px;
+	height: 23px;
+	/*background: #969ea5;*/
+	background: url(../image/menu-bg.png) repeat-x;
+	float: left;	
+}
+
+#header-top h2 {
+	font-family: "Grandesign Neue Serif";
+	font-size: 24px;
+	color: #000;
+	display: block;
+	float: left;	
+	margin-left: 10px;
+}
+
+#header-top h3.championship {
+	font-family: "Fontin Sans Rg";
+	font-size: 18px;
+	color: #3c3434;
+	float: left;
+	position: relative;
+	top: 2px;
+	left: 125px;
+}
+
+#header-top h3.circuit {
+	font-family: "Fontin Sans Rg";
+	font-size: 18px;
+	color: #3c3434;
+	float: right;
+	margin-right: 10px;
+	position: relative;
+	top: 2px;
+}
+
+#header-race {
+	width: 773px;
+	height: 124px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+ul#menu {
+	position: relative;	
+}
+
+ul#menu li a {
+	text-decoration: none;
+	color: #000;
+	font-family: "Grandesign Neue Serif";
+	font-size: 12px;
+	display: block;
+	float: left;
+	margin-right: 40px;
+}
+
+ul#menu li a.racers {
+	width: 41px;
+	height: 14px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background-image: url(../image/racers-button.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	margin-left: 20px;
+	position: relative;
+	top: 6px;
+}
+
+ul#menu li a.race-schedule {
+	width: 91px;
+	height: 14px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background-image: url(../image/schedule.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+	top: 5px;
+}
+
+ul#menu li a.race-summary {
+	width: 96px;
+	height: 14px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background-image: url(../image/race-summary-button.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+	top: 6px;
+}
+
+ul#menu li a.race-administer {
+	width: 71px;
+	height: 14px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background-image: url(../image/administer-button.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+	top: 6px;
+}
+
+ul#menu li a.race-final {
+	width: 76px;
+	height: 14px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background-image: url(../image/final-result-button.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: relative;
+	top: 6px;
+}
+
+ul#racer-by-class {
+	position: absolute;
+	top: 24px;;
+	left: 0;
+	background: #000;
+	width: 220px;
+	visibility: hidden;
+	z-index: 200;
+	padding: 8px;
+}
+
+ul#racer-by-class li {
+	width: 210px;
+}
+
+ul#racer-by-class li a {
+	width: 205px;
+	padding: 7px;
+	font-size: 12px;
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+
+ul#racer-by-class li a:hover {
+	background: #fff;	
+	background: url(../image/sub-bg-2.png) no-repeat;
+	color: #000;
+}
+
+ul#race-summary-sub {
+	position: absolute;
+	top: 25px;;
+	left: 230px;
+	background: #000;
+	width: 220px;
+	visibility: hidden;
+	z-index: 200;
+	padding: 8px;
+}
+
+ul#race-summary-sub  li {
+	width: 210px;
+}
+
+ul#race-summary-sub li a {
+	width: 205px;
+	padding: 7px;
+	font-size: 12px;
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+
+ul#race-summary-sub li a:hover {
+	background: #fff;	
+	color: #000;
+	background: url(../image/sub-bg-2.png) no-repeat;
+}
+
+ul#administer-sub {
+	position: absolute;
+	top: 25px;
+	left: 365px;
+	background: #000;
+	width: 220px;
+	visibility: hidden;
+	padding: 8px;
+}
+
+ul#administer-sub li {
+	width: 210px;
+}
+
+ul#administer-sub li a {
+	width: 205px;
+	padding: 7px;
+	font-size: 12px;
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+
+ul#administer-sub li a:hover {
+	background: #fff;	
+	color: #000;
+	background: url(../image/sub-bg-2.png) no-repeat;
+}
+
+ul#race-final-sub {
+	position: absolute;
+	top: 25px;
+	left: 480px;
+	background: #000;
+	width: 220px;
+	visibility: hidden;
+}
+
+ul#race-final-sub li {
+	width: 210px;
+}
+
+ul#race-final-sub li a {
+	width: 205px;
+	padding: 7px;
+	font-size: 12px;
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+
+ul#race-final-sub li a:hover {
+	background: #fff;	
+	color: #000;
+}
+
+#wrapper {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+#content {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-bottom: 40px;
+}
+
+#data {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;	
+	margin-top: 60px;
+}
+
+#data h1.racers-class {
+	font-family: "Grandesign Neue Serif";
+	font-size: 36px;
+	color: #b6b6b6;	
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#data h2.info {
+	font-family: "Grandesign Neue Serif";
+	font-size: 18px;
+	color: #b6b6b6;	
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+
+#data h1#all-racer {
+	font-family: "Grandesign Neue Serif";
+	font-size: 36px;
+	color: #b6b6b6;	
+	position: relative;
+	top: 15px;
+}
+
+#data h1#all-racer:before {
+	content: url(../image/helmet-grey-32.png);	
+	position: relative;
+	top: 5px;
+	margin-right: 7px;
+}
+
+#data h1#site-info {
+	font-family: "Grandesign Neue Serif";
+	font-size: 36px;
+	color: #b6b6b6;	
+}
+
+#add-racer-wrapper {
+	float: right;
+	position: relative;
+	top: -25px;	
+	right: 5px;
+}
+
+a#add-racer {
+	font-family: "Grandesign Neue Serif";
+	font-size: 14px;
+	color: #FFF;
+	text-decoration: none;
+}
+
+a#add-racer:before {
+	content: url(../image/motorcycle.png);	
+	margin-right: 7px;
+	position: relative;
+	top: 15px;
+}
+
+#table-data {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+table#all-racer {
+	width: 950px;
+	background-image: url(../image/table-bg.png);
+	background-repeat: repeat-x;
+	background: #c0c0c0;
+	border-collapse: collapse;
+}
+
+table#all-racer th {
+	padding: 7px;
+	height: 35px;
+	border: 1px solid #424549;
+	background-image: url(../image/th-bg.png);
+	background-repeat: repeat-x;
+	font-family: "Grandesign Neue Serif";
+	font-size: 14px;
+	color: #FFF;
+}
+
+table#all-racer td {
+	padding: 10px;
+	border: 1px solid #424549;
+	font-family: "Grandesign Neue Serif";
+	font-size: 12px;
+}
+
+table#all-racer td.racer_ns_no {
+	text-align: center;	
+	width: 5%;
+}
+
+table#all-racer td.racer_ns_col {
+	text-align: center;	
+	width: 5%;
+}
+
+table#all-racer td.racer_pengda_col {
+	text-align: center;	
+	width: 12%;
+}
+
+table#all-racer td.racer_name_col {
+	width: 20%;
+}
+
+
+table#all-racer td.racer_vehivle_col {
+	width: 13%;
+	text-align: center;	
+}
+
+table#all-racer td.racer_team_col {
+	width: 20%;
+	text-align: center;	
+}
+
+table#all-racer td.racer_class_col {
+	text-align: center;	
+	width: 15%;
+}
+
+table#all-racer td.racer_time_col {
+	width: 2%;
+	text-align: center;
+}
+
+table#all-racer td.racer_time_col input {
+	width: 50px;
+}
+
+table#all-racer td.racer_point_one_col {
+	text-align: center;
+	width: 2%;	
+}
+
+table#all-racer td.racer_point_one_col input{
+	width: 50px;
+}
+
+table#all-racer td.racer_point_two_col {
+	text-align: center;
+	width: 2%;	
+}
+
+table#all-racer td.racer_point_two_col input{
+	width: 50px;
+}
+
+table#all-racer td.racer_total_col {
+	text-align: center;
+	width: 2%;	
+}
+
+table#all-racer td.racer_total_col input{
+	width: 50px;
+}
+
+table#all-racer tr.racer_submit {
+	border: none;
+	width: 100%;
+}
+
+table#all-racer tr.racer_submit input {
+	display: block;
+	text-align: center;
+}
+
+table#all-racer tr.racer_submit td {
+	border: none;
+	text-align: center;
+}
+
+
+table#all-racer td.racer_name_col a:hover {
+	text-decoration: none; 
+	color: #fff;
+}
+
+table#all-racer td.racer_name_col a {
+	text-decoration: none;
+	color: #000;
+}
+
+#qtt-header {
+	margin-bottom: 20px;
+}
+
+table#qtt-header td {
+	font-family: "Grandesign Neue Serif";
+	font-size: 18px;	
+	padding: 9px;
+}
+
+.input-error {
+    outline: 1px solid red;
+}
+
+span.td-error {
+	font-size: 11px;	
+}
+
+.form-error {
+	margin-top: 5px;	
+}
+
+#input-score {
+	float: right;	
+}
+
+#input-score input {
+	display: block;
+	width: 200px;	
+	margin-bottom: 13px;
+	position: relative;
+	top: -137px;
+	right: 20px;
+}
+
+.button {
+	width: 170px;
+	height: 25px;
+	margin-top: 30px;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.button input#make-qtt {
+	width: 154px;
+	height: 29px;
+	text-indent: -9999px;
+	background: url(../image/generate-div-2.png) no-repeat;
+	display: block;
+	border: none;
+	cursor: pointer;
+}
+
+#qtt-save {
+	width: 91px;
+	height: 25px;
+	margin-top: 20px;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#qtt-save input#save-qtt {
+	width: 95px;
+	height: 27px;
+	text-indent: -9999px;
+	background: url(../image/save-qtt-2.png) no-repeat;
+	display: block;
+	border: none;
+	cursor: pointer;
+}
+
+body.list_summary {
+	background: #fff;	
+}
+
+table#qtt-header td {
+	font-size: 14px;	
+	border: none;
+}	
+
+table#qtt-header td.qtt_title {
+	background: #ccc;
+	border-right: 1px solid #393e44;
+	border-bottom: 1px solid #393e44;
+}
+
+table#qtt-header td.qtt-data {
+	background: #ccc;
+	color: #000;
+	border-bottom: 1px solid #393e44;
+}
+
+#qtt-link {
+	margin-bottom: 5px;
+}
+
+#qtt-link h2 {
+	font-size: 16px;	
+}
+
+#qtt-link h2:before {
+	content: url(../image/flag.png);
+	margin-right: 10px;
+	position: relative;
+	top: 5px;
+}
+
+#qtt-link a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#qtt-data {
+	float: left;	
+	margin-left: 30px;
+	margin-bottom: 10px;
+}
+
+#qtt-title {
+	float: left;		
+}
+
+#qtt-title h2 {
+	font-family: "Grandesign Neue Serif";
+	font-size: 16px;
+	color: #FFF;		
+}
+
+#qtt-data span {
+	font-family: "Grandesign Neue Serif";
+	font-size: 16px;
+	color: #FFF;	
+	font-weight: normal;	
+}
+
+div#qtt-header-summary {
+	width: 945px;
+	border: 2px solid #000;
+	background: #fff;
+	margin-bottom: 10px;
+	padding-top: 20px;
+}
+
+#qtt-header-summary-tag {
+	margin-bottom: 20px;	
+	margin-left: 10px;
+	margin-top: 10px;
+	
+}
+
+#qtt-header-summary-tag h1 {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 24px;	
+	color: #000;
+	padding: 0;	
+}
+
+#qtt-header-summary-tag h2 {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 20px;	
+	color: #000;
+	margin-bottom: 5px;	
+}
+
+#qtt-header-summary-tag p {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 20px;	
+	color: #000;
+	margin-bottom: 5px;
+}
+
+.summary-item {
+	width: 600px;
+}
+
+table.qtt-header-data {
+	border-top: 2px solid #000;
+	width: 945px;
+	padding: 5px;
+}
+
+table.qtt-header-data td {
+	padding: 5px;
+	font-family: "Microsoft New Tai Lue";
+	font-size: 20px;
+}
+
+table.qtt-header-data td.class-tag {
+	border-right: 2px solid #000;
+	border-bottom: 2px solid #000;
+	width: 13%;	
+}
+
+table.qtt-header-data td.class-data {
+	border-bottom: 2px solid #000;
+	border-right: 2px solid #000;
+	width: 50%;
+}
+
+table.qtt-header-data td.qtt-data {
+	border-right: 2px solid #000;
+	width: 50%;
+}
+
+table.qtt-header-data td.qtt-tag {
+	border-right: 2px solid #000;
+	width: 13%;	
+}
+
+table.qtt-header-data td.qtt-starter {
+	text-align: center;	
+}
+
+#starting-list {
+	width: 351px;
+	float: right;	
+	position: relative;
+	top: -16px;
+}
+
+#starting-list h2 {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;	
+	margin-bottom: 14px;
+}
+
+table#laps_race_num {
+	width: 351px;	
+	border-top: 2px solid #000;
+	border-left: 2px solid #000;
+}
+
+table#laps_race_num td {
+	padding: 10px;	
+}
+
+table#laps_race_num td.laps-tag {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 28px;
+	font-weight: bold;	
+	text-align: center;
+	background: #000;
+	color: #fff;
+}
+
+table#laps_race_num td.race-tag {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 28px;
+	font-weight: bold;	
+	text-align: center;
+	background: #000;
+	color: #fff;
+}
+
+table#laps_race_num td.laps-data {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 40px;
+	font-weight: bold;	
+	text-align: center;
+	border-right: 2px solid #000;
+}
+
+table#laps_race_num td.race-data {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 40px;
+	font-weight: bold;	
+	text-align: center;
+}
+
+div#site-info-wrapper {
+	width: 450px;	
+	position: relative;
+	top: -50px;
+}
+
+div#site-info-form-wrapper {
+	width: 450px;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;	
+	border: 1px solid #b3b3b3;
+	background: #000;
+}
+
+div#site-info-form {
+	width: 380px;
+	margin-right: 5px;
+	padding: 30px;
+}
+
+div.site-info-item {
+	width: 380px;	
+	border: 1px solid #b3b3b3;
+	margin-bottom: 20px;
+	padding: 8px;
+	background: #7e8891;
+}
+
+div#site-info-form label {
+	font-family: "Grandesign Neue Serif";
+	font-size: 14px;
+	color: #FFF;	
+}
+
+div#site-info-form input {
+	width: 250px;	
+	height: 25px;
+}
+
+div#site-info-form input#info-site-name {
+	margin-left: 38px;	
+	background: url(../image/input-bg.png) repeat-x;
+	border: none;
+}
+
+div#site-info-form input#info-site-subtitle {
+	margin-left: 26px;	
+	background: url(../image/input-bg.png) repeat-x;
+	border: none;
+}
+
+div#site-info-form input#info-location {
+	margin-left: 22px;	
+	background: url(../image/input-bg.png) repeat-x;
+	border: none;
+}
+
+div.info-site-submit {
+	width: 67px;
+	height: 30px;	
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.info-site-submit input#save-info {
+	width: 67px;
+	height: 30px;	
+	background: url(../image/save-info.png) no-repeat;
+	border: none;
+	text-indent: -9999px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+div#info-gear {
+	float: right;
+	position: relative;
+	top: 30px;
+}
+
+div#data h2.success {
+	font-family: "Grandesign Neue Serif";
+	font-size: 14px;
+	color: #F00;	
+	margin-top: 8px;	
+}
+
+h1#division-link {
+	font-family: "Grandesign Neue Serif";
+	font-size: 18px;
+	color: #b6b6b6;	
+	margin-bottom: 20px;	
+}
+
+h2.data-exist {
+	font-family: "Grandesign Neue Serif";
+	font-size: 14px;
+	color: #F00;	
+	margin-bottom: 10px;	
+	text-align: center;
+}
+
+table.schedule {
+	width: 800px;
+	border: 1px solid #000;
+}
+
+div.schedule_wrapper {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+}
+
+table#summary {
+	width: 950px;
+	background-image: url(../image/table-bg.png);
+	background-repeat: repeat-x;
+	background: #fff;
+	border: 2px solid #000;
+}
+
+table#summary th {
+	padding: 7px;
+	height: 35px;
+	background: #fff;
+	font-family: "Grandesign Neue Serif";
+	font-size: 18px;
+	color: #000;
+	font-weight: bold;
+	border: 2px solid #000;
+}
+
+table#summary td {
+	padding: 10px;
+	border: 2px solid #000;
+	font-family: "Grandesign Neue Serif";
+	font-size: 14px;
+	text-align: center;
+}
+
+table.schedule th {
+	border: 1px solid #000;
+	padding: 5px;	
+}
+
+table.schedule td {
+	border: 1px solid #000;
+	padding: 5px;	
+	text-align: center;
+}
+
+table.schedule td.time-schedule input {
+	width: 150px;	
+}
+
+table.schedule td.time-schedule {
+	width: 5%;	
+}
+
+td.race-time-schedule {
+	width: 15%;	
+}
+
+td.race-schedule {
+	width: 15%;	
+}
+
+input#racer_number_ajax {
+	width: 50px;	
+}
+
+backgroundPopup{  
+display:none;  
+position:fixed;  
+_position:absolute; /* hack for internet explorer 6*/  
+height:100%;  
+width:100%;  
+top:0;  
+left:0;  
+background:#000000;  
+border:1px solid #cecece;  
+z-index:1;  
+}  
+#popupContact{  
+display:none;  
+position:fixed;  
+_position:absolute; /* hack for internet explorer 6*/  
+width:408px;  
+background:#FFFFFF;  
+border:2px solid #cecece;  
+z-index:2;  
+padding:12px;  
+font-size:13px;  
+}  
+#popupContact h1{  
+text-align:left;  
+color:#6FA5FD;  
+font-size:22px;  
+font-weight:700;  
+border-bottom:1px dotted #D3D3D3;  
+padding-bottom:2px;  
+margin-bottom:20px;  
+}  
+#popupContactClose{  
+font-size:14px;  
+line-height:14px;  
+right:6px;  
+top:4px;  
+position:absolute;  
+color:#6fa5fd;  
+font-weight:700;  
+display:block;  
+cursor: pointer;
+}  
+
+div.final-button {
+	width: 102px;
+	height: 27px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+div.final-button-race-2 {
+	width: 124px;
+	height: 27px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	overflow: hidden;
+}
+
+div.final-button input#final-submit {
+	width: 102px;
+	height: 27px;
+	background: url(../image/final-button.png)	no-repeat;
+	text-indent: -9999px;
+	display: block;
+	cursor: pointer;
+	border: none;
+}
+
+div.final-button-race-2 input#final-submit-race-2 {
+	width: 124px;
+	height: 27px;
+	background: url(../image/final-race-2.png)	no-repeat;
+	text-indent: -9999px;
+	display: block;
+	cursor: pointer;
+	border: none;
+}
+
+div.edit-summary {
+	width: 70px;
+	height: 27px;
+	margin-top: 30px;
+	float: left;
+}
+
+div.save-summary {
+	width: 70px;
+	height: 27px;
+	margin-top: 30px;
+	float: left;
+	margin-left: 20px;
+}
+
+div.print-summary {
+	width: 70px;
+	height: 27px;
+	margin-top: 30px;
+	float: left;
+	margin-left: 20px;
+	overflow: hidden;
+}
+
+div.edit-summary input#edit-summary-button {
+	width: 70px;
+	height: 27px;
+	background: url(../image/edit-summary.png)	no-repeat;
+	text-indent: -9999px;
+	display: block;
+	cursor: pointer;
+	border: none;
+}
+
+div.save-summary input#save-summary-button {
+	width: 70px;
+	height: 27px;
+	background: url(../image/save-summary.png)	no-repeat;
+	text-indent: -9999px;
+	display: block;
+	cursor: pointer;
+	border: none;
+}
+
+div.print-summary a {
+	width: 70px;
+	height: 27px;
+	background: url(../image/print.png)	no-repeat;
+	text-indent: -9999px;
+	display: block;
+	cursor: pointer;
+	border: none;
+}
+
+input.summary-racer-grid {
+	width: 80px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input.summary-racer-time {
+	width: 50px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#laps {
+	width: 150px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#race-count {
+	width: 150px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#racer-best {
+	width: 100px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#race-pick {
+	width: 150px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#point_one {
+	width: 150px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#point_two {
+	width: 150px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#total {
+	width: 150px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#point_one_edit {
+	width: 50px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#point_two_edit {
+	width: 50px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+input#total_edit {
+	width: 50px;
+	height: 27px;
+	background: url(../image/input-grid.png) repeat-x;
+	border: none;
+	padding-left: 2px;
+}
+
+td.racer_no_col_qttlist {
+	width: 5%;
+	text-align: center;	
+}
+
+#qtt-header th {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	background-image: url(../image/th-bg.png);
+	background-repeat: repeat-x;
+	font-family: "Grandesign Neue Serif";
+	font-size: 14px;
+	color: #FFF;	
+}
+
+div.qtt-header-class {
+	width: 37px;
+	height: 12px;
+	background: url(../image/qtt-header-class.png) no-repeat;
+	text-indent: -9999px;
+	display: block;	
+	margin-top: 2px;
+}
+
+div.qtt-header-race {
+	width: 35px;
+	height: 12px;
+	background: url(../image/qtt-header-race.png) no-repeat;
+	text-indent: -9999px;
+	display: block;	
+	margin-top: 2px;
+}
+
+div.qtt-header-starter {
+	width: 48px;
+	height: 12px;
+	background: url(../image/qtt-header-starter.png) no-repeat;
+	text-indent: -9999px;
+	display: block;	
+	margin-top: 2px;
+}
+
+div.qtt-header-race-type {
+	width: 68px;
+	height: 13px;
+	background: url(../image/qtt-header-race-type.png) no-repeat;
+	text-indent: -9999px;
+	display: block;	
+	margin-top: 2px;
+}
+
+div.qtt-header-race-laps {
+	width: 34px;
+	height: 13px;
+	background: url(../image/qtt-header-laps.png) no-repeat;
+	text-indent: -9999px;
+	display: block;	
+	margin-top: 2px;
+}
+
+div.qtt-header-race-count {
+	width: 76px;
+	height: 13px;
+	background: url(../image/qtt-header-race-count.png) no-repeat;
+	text-indent: -9999px;
+	display: block;	
+	margin-top: 2px;
+}
+
+div.qtt-header-pick {
+	width: 30px;
+	height: 12px;
+	background: url(../image/qtt-header-pick.png) no-repeat;
+	text-indent: -9999px;
+	display: block;	
+	margin-top: 2px;
+}
+
+div#info-qtt {
+	width: 28px;
+	height: 28px;
+	position: relative;
+	top: 20px;	
+}
+
+div.division-links {
+	margin-bottom: 2px;
+	background: #ccc;
+	width: 270px;
+	padding: 10px;
+	border-left: 30px solid #809994;
+	border-right: 30px solid #809994;
+}
+
+div.division-links h2 {
+	font-family: "Grandesign Neue Serif";
+	font-size: 14px;
+	color: #000;	
+	margin-bottom: 10px;
+}
+
+div.division-links ul li {
+	list-style: none;
+	font-family: "Grandesign Neue Serif";
+	font-size: 12px;
+	color: #fff;
+}
+
+div.division-links ul li a {
+	list-style: none;
+	font-family: "Grandesign Neue Serif";
+	font-size: 12px;
+	color: #fff;
+	text-decoration: none;
+}
+
+#data h1.race-division {
+	font-family: "Grandesign Neue Serif";
+	font-size: 36px;
+	color: #b6b6b6;	
+	width: 270px;
+}
+
+div.race-div-wrapper {
+	width: 390px;
+	margin-bottom: 30px;
+	padding: 8px;
+}
+
+img.done {
+	background: url(../image/done.png) no-repeat;
+	display: block;
+	float: right;
+	position: relative;
+	top: -5px;
+}
+
+div.pagination {
+	margin-top: 10px;
+}
+
+div.pagination a{
+	font-family: "Microsoft New Tai Lue";
+	font-size: 12px;	
+	color: #fff;
+	text-decoration: none;
+	background: #000;
+	padding: 3px;	
+}
+
+div.pagination a:hover {
+	background: #97a6b0;	
+	color: #000;
+}
+
+span.page_active {
+	margin-left: 5px;	
+	font-family: "Microsoft New Tai Lue";
+	font-size: 14px;	
+	color: #fff;
+	background: #97a6b0;
+	padding: 3px;
+}
+
+
+
+
+
+
+
+	
+
+
+

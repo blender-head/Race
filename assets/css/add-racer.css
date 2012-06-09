@@ -1,0 +1,332 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	background: url(../image/flag-body.png) repeat;
+}
+
+@font-face {
+	font-family: "Fontin Sans Rg";
+	src: url("../fonts/Fontin_Sans_B.otf") format("opentype"),
+		 url("../fonts/Fontin_Sans_BI.otf") format("opentype"),
+		 url("../fonts/Fontin_Sans_I.otf") format("opentype"),
+		 url("../fonts/Fontin_Sans_R.otf") format("opentype"),
+		 url("../fonts/Fontin_Sans_SC.otf") format("opentype"),
+		 url("../fonts/Fontin-Bold.otf") format("opentype"),
+		 url("../fonts/Fontin-Italic.otf") format("opentype");
+}
+
+@font-face {
+	font-family: "Grandesign Neue Serif";
+	src: url("../fonts/Grandesign Neue Serif Bold Italic.ttf"),
+		 url("../fonts/Grandesign Neue Serif Bold.ttf"),
+		 url("../fonts/Grandesign Neue Serif Italic.ttf"),
+		 url("../fonts/Grandesign Neue Serif.ttf");
+}
+
+#wrapper {
+	width: 680px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+#form-wrapper {
+	width: 630px;
+	/*height: 750px;*/
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #000;
+	background-image: url(../image/add-racer-wrapper-bg-2.png);
+	background-repeat: repeat-x;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	z-index: 200;
+	top: -100px;
+}
+
+#form-racer {
+	width: 828px;
+	height: 282px;
+	margin-left: auto;
+	margin-right: auto;	
+
+}
+
+#form-data {
+	width: 600px;
+	margin-left: 30px;
+	margin-top: 40px;
+	overflow: hidden;
+}
+
+#form-data form {
+	width: 500px;	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-item {
+	margin-bottom: 30px;	
+}
+
+#form-data input#racer-number, input#racer-name, input#racer-team, input#racer-vehicle {
+	width: 345px;
+	height: 25px;	
+	background: url(../image/input-bg.png) repeat-x;
+	border: none;
+	padding-left: 3px;
+}
+
+#form-data select {
+	width: 350px;
+	height: 27px;	
+	padding: 5px;
+	margin-left: 20px;
+}
+
+#form-data select#racer-class {
+	width: 350px;
+	height: 27px;	
+	padding: 5px;
+	margin-left: 37px;
+}
+
+label {
+	font-family: "Grandesign Neue Serif", Verdana;
+	font-size: 14px;	
+	color: #fff;	
+}
+
+input#racer-number {
+	margin-left: 50px;	
+}
+
+input#racer-name {
+	margin-left: 67px;	
+}
+
+select#racer-pengda {
+	margin-left: 59px;	
+}
+
+input#racer-team {
+	margin-left: 75px;	
+}
+
+input#racer-vehicle {
+	margin-left: 58px;	
+}
+
+input#submit-btn {
+	width: 95px;
+	height: 27px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.input-error {
+    outline: 1px solid red;
+}
+
+.form-error span {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-style: italic;
+	font-size: 12px;
+	color: #fff;
+	margin-bottom: 8px;
+}
+
+.form-error {
+	margin-left: 127px;	
+	margin-top: 5px;
+}
+
+
+#form-data input#add-btn {
+	width: 95px;
+	height: 27px;
+	text-indent: -9999px;
+	background: url(../image/add-racer-button-2.png) no-repeat;
+	display: block;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+
+#button-add-wrapper {
+	width: 91px;
+	height: 25px;
+	margin-left:auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+input#update-btn {
+	width: 95px;
+	height: 27px;
+	display: block;
+	text-indent: -9999px;
+	background: url(../image/update-2.png) no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+input#delete-btn {
+	width: 95px;
+	height: 27px;
+	display: block;
+	text-indent: -9999px;
+	background: url(../image/delete-2.png) no-repeat;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+table#button-wrapper {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;	
+	margin-bottom: 20px;
+}
+
+table#button-wrapper td {
+		padding: 10px;
+}
+
+p.checkbox-class {
+	font-family: "Grandesign Neue Serif", Verdana;
+	font-size: 15px;	
+	color: #fff;	
+}
+
+p.checkbox-class {
+	margin-bottom: 5px;
+}
+
+label#label-racer {
+	display: block;
+	margin-bottom: 15px;	
+}
+
+input.class {
+	padding-right: 5px;	
+}
+
+.asterisk {
+	color: #f00;
+}	
+
+.form-item-add {
+	width: 440px;
+	margin-top: 50px;	
+	margin-left: auto;
+	margin-right: auto;
+	-moz-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 1px solid #ccc;
+	padding: 20px
+}
+
+div.form-delete {
+	width: 400px;
+	height: 150px;
+	border: 5px solid #000;	
+	margin-left: 30px;
+	margin-top: 30px;
+	padding: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background: url(../image/form-delete-bg.png) repeat-x;
+}
+
+div.form-delete p {
+	font-family: "Microsoft New Tai Lue";
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+span.confirm {
+	color: #F00;	
+}
+
+a#delete-cancel {
+	display:block;
+	width: 74px;
+	height: 24px;
+	background: url(../image/delete-cancel.png) no-repeat;
+	border: none;
+	text-indent: -9999px;
+	overflow: hidden;
+	cursor: pointer;	
+	float: left;
+	margin-right: 10px;
+}
+
+a#delete-yes {
+	display:block;
+	width: 53px;
+	height: 24px;
+	background: url(../image/delete-yes.png) no-repeat;
+	border: none;
+	text-indent: -9999px;
+	overflow: hidden;
+	cursor: pointer;	
+	float: left;
+}
